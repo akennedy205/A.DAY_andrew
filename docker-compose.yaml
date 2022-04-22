@@ -11,7 +11,7 @@ services:
   db:
     image: postgres:12.4
     environment: 
-      - POSTGRES_USER=futureproof
+      - POSTGRES_USER=habitapp
     volumes:
       - "./db/migrations:/docker-entrypoint-initdb.d/:ro"
 

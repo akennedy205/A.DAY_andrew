@@ -12,9 +12,11 @@ A habit-tracking application that allows users to securely register, login and t
 
 ### Technologies Used: 
 
+- NPM 
 - Express
 - Node.js 
 - Javascript 
+- (Bootstrap ??)
 - HTML/CSS
 - PostgreSQL
 - Docker 
@@ -44,7 +46,7 @@ A habit-tracking application that allows users to securely register, login and t
 
 ## Changelog
 
-#
+# 
 
 [x]
 
@@ -68,6 +70,6 @@ A habit-tracking application that allows users to securely register, login and t
 
 ## Contributors
 
-[Andrew Kennedy ](https://github.com/akennedy205)
-[David Quigley]()
+[Andrew Kennedy](https://github.com/akennedy205)
+[David Quigley](https://github.com/AverKill)
 [Aafthab Ashraff](https://github.com/iAmash412)
