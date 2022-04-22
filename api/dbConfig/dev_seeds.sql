@@ -1,0 +1,5 @@
+INSERT INTO habits () 
+VALUES
+(''),
+(''),
+('');
