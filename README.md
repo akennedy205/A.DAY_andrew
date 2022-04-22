@@ -64,7 +64,7 @@ A habit-tracking application that allows users to securely register, login and t
 
 ### Wins
 
-### Challenges
+### Challenges
 
 ## Future Features
 
