@@ -50,7 +50,7 @@ A habit-tracking application that allows users to securely register, login and t
 
 {Aafthab - iAmash412}
 
-the files for the functions have been created, however furher work is required.
+the files for the functions have been created, however further work is required.
 
 # models
 
@@ -73,7 +73,7 @@ Created the relevent routes need for the app in the routers folder.
 _PARENT TABLE_
 
 - A Table for Tracker was created in the database.
-  Relevent elements have been created and have been connected wit to one to one relationship with the child tables.
+  Relevent elements have been created and have been connected with a one to one relationship with the child tables.
 
 _CHILD TABLE_
 
