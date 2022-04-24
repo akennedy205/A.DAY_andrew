@@ -1,4 +1,4 @@
-INSERT INTO habits () 
+INSERT INTO Tracker () 
 VALUES
 (''),
 (''),
