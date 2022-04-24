@@ -1,0 +1,85 @@
+body {
+    background-color: rgba(255, 218, 185, 0.356);
+    margin: auto;
+}
+
+/* NAVBAR STYLING */
+
+nav {
+    border-bottom: solid black 1px;
+}
+
+#navbarNav {
+    display: flex;
+    justify-content: center;
+    margin-left: 30%;
+}
+
+#login {
+    margin-left: auto;
+}
+
+#basket {
+    margin-left: 10px;
+}
+
+/* MAIN CONTENT STYLING */
+
+.container {
+    margin-top: 100px;
+    margin-left: 10%;
+}
+
+.video-circle {
+    opacity: 0.8;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* BUTTON STYLING */
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+.homeBtn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+    background: rgba(226, 149, 77, 0.356);
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.homeBtn button {
+    position: relative;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    top: 10px;
+    vertical-align:middle;
+}
+
+.homeBtn svg {
+    position: relative;
+    top: 10px;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #111;
+    stroke-width: 2;
+    transform: translateX(-5px);
+}
+
+.homeBtn:hover:before {
+    width: 40%;
+    background: rgba(222, 154, 92, 0.786);
+}
+
+/* LOGIN PAGE STYLING */
