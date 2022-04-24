@@ -10,16 +10,16 @@ A habit-tracking application that allows users to securely register, login and t
 - Fork/clone the repository
 - Open new terminal and navigate to folder `cd A.DAY`
 
-### Technologies Used: 
+### Technologies Used:
 
-- NPM 
+- NPM
 - Express
-- Node.js 
-- Javascript 
+- Node.js
+- Javascript
 - (Bootstrap ??)
 - HTML/CSS
 - PostgreSQL
-- Docker 
+- Docker
 
 ## Usage
 
@@ -46,7 +46,39 @@ A habit-tracking application that allows users to securely register, login and t
 
 ## Changelog
 
-# 
+# controllers
+
+{Aafthab - iAmash412}
+
+the files for the functions have been created, however furher work is required.
+
+# models
+
+{Aafthab - iAmash412}
+
+the required Class have been created in order to make the functions for avaiable controllers.
+
+!ATTENTION IS REQUIRED TO THE CLASS AS I NEED ASSISTANCE IN ORDER TO UNDERSTAND HOW DATA IS RETIEVED FROM DATA BASE!
+
+# routers
+
+{Aafthab - iAmash412}
+
+Created the relevent routes need for the app in the routers folder.
+
+# db
+
+{Aafthab - iAmash412}
+
+_PARENT TABLE_
+
+- A Table for Tracker was created in the database.
+  Relevent elements have been created and have been connected wit to one to one relationship with the child tables.
+
+_CHILD TABLE_
+
+- A Table for Habits was created in the database.
+- A Table for Users was created in the database.
 
 [x]
 

@@ -1,10 +1,10 @@
-const express = require("express");
-const cors = require("cors");
+const express = require('express');
+const cors = require('cors');
 
 const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.get("/", (req, res) => res.send("A.DAY Habit Tracker!"));
+server.get('/', (req, res) => res.send('Welcome to Mindless!'));
 
 module.exports = server;
