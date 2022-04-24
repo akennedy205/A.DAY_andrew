@@ -1,5 +1,8 @@
 const db = require('../dbConfig/init');
 
+const Habit = require('./Habit');
+const User = require('./User');
+
 class Tracker {
   constructor(data) {
     this.id = data.id;
