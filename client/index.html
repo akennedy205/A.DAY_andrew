@@ -5,11 +5,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/592efcffa0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="static/css/index.css">
-    <title> HABIT TRACKER </title>
+    <!-- <script src="script.js"></script> -->
+    <title>a.day</title>
 </head>
 
-<body>
+<!-- NAVBAR  -->
+
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html"> A.DAY </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html"> INTRODUCTION <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FEATURES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> COMPLETED TASKS </a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul id="login" class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html"> <img src="static/css/login.png" alt="login icon"></a>
+                </li>
+                <li id="basket" class="nav-item">
+                    <a class="nav-link" href="#"><img src="static/css/basket.png" alt="basket icon"> </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+
+    <header>
+        <section>
+            <div class="container">
+                <div class="row flex-lg-row-reverse align-items-start g-5 py-3">
+
+                    <div class="col-10 col-sm-8 col-lg-6">
+                        <h1 class="display-5 fw-bold lh-1 py-3"> The Secret To Fixing The Bad Habits You May Not Know
+                            You Have </h1>
+                        <p class="lead"> Most of us don’t see the flaws in ourselves that other people do. Step one is
+                            finding out what you’re overlooking.
+                            </br><br><span>If you are dedicated and meticulous about monitoring concrete goals and
+                                behaviors. Join us to start tracking your progress!</p>
+                        <div class="row d-md-flex">
+                            <div class="col-lg-12">
+                                <a class="homeBtn" href="login.html">
+                                    <button id="homebutton"> GET STARTED </button>
+                                    <svg width="13px" height="10px" viewBox="0 0 13 10">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="video" class="col-lg-6">
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <video class="video-circle" width="200" height="200" muted autoplay loop playsInline
+                                class="embed-responsive-item rounded">
+                                <source src="static/css/home.mp4" type="video/mp4">
+                                Your browser doesn't support mp4 videos, please use the most updated browser.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </header>
+
+    <section>
+
+        
+    </section>
+
 
 </body>
 

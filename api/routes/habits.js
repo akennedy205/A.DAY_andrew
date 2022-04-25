@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+
 const habitsController = require('../controllers/habits');
 
 router.route("/").get(habitsController.index).post(habitsController.create);
