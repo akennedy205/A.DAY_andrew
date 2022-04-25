@@ -15,7 +15,7 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="static/css/index.css">
-    <!-- <script src="script.js"></script> -->
+    <script defer src="static/js/login.js"></script>
     <title>a.day</title>
 </head>
 
@@ -97,21 +97,7 @@
             </div>
         </div>
     </div>
-    <script>
-
-        const signUpButton = document.getElementById('signUp');
-        const signInButton = document.getElementById('signIn');
-        const container = document.getElementById('container');
-
-        signUpButton.addEventListener('click', () => {
-            container.classList.add("right-panel-active");
-        });
-
-        signInButton.addEventListener('click', () => {
-            container.classList.remove("right-panel-active");
-        });
-        
-    </script>
+   
 </body>
 
 </html>
