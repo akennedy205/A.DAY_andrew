@@ -8,4 +8,5 @@ const init = async () => {
   return client.db(process.env.DB_NAME);
 };
 //anyone who imports me can connect and talk to db
+
 module.exports = { init };
