@@ -6,6 +6,7 @@ const User = require('./User');
 class Tracker {
   constructor(data) {
     this.id = data.id;
+    this.habit = data.habit;
     this.date = data.date;
     this.day = data.day;
     this.startTime = data.start_time;
