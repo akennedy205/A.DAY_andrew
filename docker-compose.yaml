@@ -12,6 +12,3 @@ services:
     image: mongo:latest
     environment:
       - MONGO_INITDB_ROOT_USERNAME=habitsapp-admin
-    volumes:
-      - 'dbdata:/var/lib/mongodb/data'
-      - './db/seed.js:/docker-entrypoint-initdb.d/seed.js:ro'

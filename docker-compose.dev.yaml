@@ -2,7 +2,7 @@ services:
   client:
     container_name: habit_app_client
     build: ./client
-    image: debug_client
+    image: habits_client
     ports:
       - 5050:5050
     working_dir: /code
@@ -27,7 +27,7 @@ services:
     image: mongo:latest
     environment:
       - MONGO_INITDB_ROOT_USERNAME=habitsapp-admin
-      - MONGO_INITDB_DATABASE=habitsapp
+      - MONGO_INITDB_DATABASE=habits_app_user
       - MONGO_INITDB_ROOT_PASSWORD=habitapp-pass
     volumes:
       - 'dbdata:/var/lib/mongodb/data'
@@ -36,4 +36,4 @@ volumes:
   dbdata:
 networks:
   default:
-    name: debug_api
+    name: habits_api
