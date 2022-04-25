@@ -5,6 +5,6 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.get('/', (req, res) => res.send('Welcome to Mindless!'));
+server.get('/', (req, res) => res.send('Welcome to A.Day!'));
 
 module.exports = server;

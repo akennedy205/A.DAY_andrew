@@ -1,5 +1,0 @@
-INSERT INTO Tracker () 
-VALUES
-(''),
-(''),
-('');
