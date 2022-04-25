@@ -1,4 +1,5 @@
-const db = require('../dbConfig/init');
+const seedsData = require('../dbConfig/dev_seed.js');
+const { init } = require('../init.js');
 
 class User {
   constructor(data) {

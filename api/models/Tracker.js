@@ -1,4 +1,5 @@
-const db = require('../dbConfig/init');
+const seedsData = require('../dbConfig/dev_seed.js');
+const { init } = require('../init.js');
 
 const Habit = require('./Habit');
 const User = require('./User');
