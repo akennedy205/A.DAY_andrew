@@ -1,7 +1,7 @@
 services:
   api:
     container_name: habit_test_api
-    environment: 
+    environment:
       - PGUSER=habitapp
       - PGHOST=db
       - PGPASSWORD=habitapp_pass
@@ -14,12 +14,13 @@ services:
   db:
     container_name: habit_test_db
     volumes:
-      - "test_db:/var/lib/postgresql/data"
-    environment: 
-      - POSTGRES_DB=habit_test
-      - POSTGRES_PASSWORD=habitapp_pass
+      - 'dbdata:/var/lib/mongodb/data'
+      - './db/seed.js:/docker-entrypoint-initdb.d/seed.js:ro'
+    environment:
+      - MONGO_INITDB_DATABASE=habitsapp
+      - MONGO_INITDB_ROOT_PASSWORD=habitapp-pass
 volumes:
   test_db:
-networks: 
+networks:
   default:
     name: debug_test

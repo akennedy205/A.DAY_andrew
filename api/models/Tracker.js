@@ -15,3 +15,5 @@ class Tracker {
 
   ////all the different functions get/create/update/delete
 }
+
+module.exports = Tracker;

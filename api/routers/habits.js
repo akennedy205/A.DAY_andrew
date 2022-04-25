@@ -6,8 +6,8 @@ router.route('/').get(habitsController.index).post(habitsController.create);
 
 router
   .route('/:id')
-  .get(hsbitsController.show)
-  .delete(habitsController.delete)
+  .get(habitsController.show)
+  .delete(habitsController.destroy)
   .put(habitsController.update);
 
 module.exports = router;

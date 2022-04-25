@@ -9,9 +9,9 @@ services:
         target: /code
 
   db:
-    image: postgres:12.4
-    environment: 
-      - POSTGRES_USER=habitapp
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=habitsapp-admin
     volumes:
-      - "./db/migrations:/docker-entrypoint-initdb.d/:ro"
-
+      - 'dbdata:/var/lib/mongodb/data'
+      - './db/seed.js:/docker-entrypoint-initdb.d/seed.js:ro'
