@@ -4,87 +4,30 @@ db.userTracker.drop(); //drop table if exist
 
 db.userTracker.insertMany([
   {
-    username: 'test_user1',
-    name: 'user1',
-    email: 'test@user',
-    password: 'user1',
-    habit: [
+    username: 'Harambe',
+    name: 'Bossman Onur',
+    age: 21,
+    gender: 'gigachad',
+    email: 'OnurSexyBoy@gmail.com',
+    password: '12345ItsGOATED',
+    quote: 'I will sleep when the grind stops, but the grind never dies',
+    habits: [
       {
-        habit1: 'Running',
-        tracker: [
-          {
-            date: '02/10/2022',
-            day: 'Wednesday',
-            start_time: '07:30',
-            end_time: '8:48',
-          },
-        ],
-        habit2: 'Drinking water',
-        tracker: [
-          {
-            date: '02/10/2022',
-            day: 'Wednesday',
-            start_time: '06:30',
-            end_time: '7:48',
-          },
-        ],
+        name: 'Smoking my plant',
+        frequency: 'daily',
+        count: 24,
+        date: '27/04/2022',
+        improvement: 'Undefined'
       },
-    ],
-  },
-  {
-    username: 'test_user2',
-    name: 'user2',
-    email: 'test@user2',
-    password: 'user2',
-    habit: 'Swimming',
-    date: '03/10/2022',
-    day: 'Thrusday',
-    start_time: '07:45',
-    end_time: '9:37',
-  },
-  {
-    username: 'test_user3',
-    name: 'user3',
-    email: 'test@user3',
-    password: 'user3',
-    habit: 'Walking',
-    date: '04/10/2022',
-    day: 'Friday',
-    start_time: '07:50',
-    end_time: '9:12',
-  },
-  {
-    username: 'test_user4',
-    name: 'user4',
-    email: 'test@user4',
-    password: 'user4',
-    habit: 'Jogging',
-    date: '05/10/2022',
-    day: 'Saturday',
-    start_time: '07:34',
-    end_time: '9:17',
-  },
-  {
-    username: 'test_user5',
-    name: 'user5',
-    email: 'test@user5',
-    password: 'user5',
-    habit: 'Drinking water',
-    date: '09/10/2022',
-    day: 'Monday',
-    start_time: '09:34',
-    end_time: '10:40',
-  },
-  {
-    username: 'test_user6',
-    name: 'user6',
-    email: 'test@user6',
-    password: 'user6',
-    habit: 'Eating junk food',
-    date: '09/10/2022',
-    day: 'Monday',
-    start_time: '09:34',
-    end_time: '10:40',
+      {
+        name: 'Sigma Grind',
+        frequency: 'monthly',
+        days: ['mon', 'tue', 'wed', 'thur', 'fri', 'sat', 'sun', 'sig'],
+        time: ['06:00', '18:00', '06:00', '18:00', '06:00', '18:00', '06:00', '18:00', '06:00', '18:00', '06:00', '18:00', '06:00', '18:00', '06:00', '18:00',],
+        date: '27/04/2022',
+        completed: 'forever'
+      }
+    ]
   },
   {
     username: 'PrettyBoy69',

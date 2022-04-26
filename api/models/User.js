@@ -2,12 +2,14 @@ const { init } = require("../init.js");
 
 class User {
   constructor(data) {
-    this.id = data.id;
     this.username = data.username;
     this.name = data.name;
+    this.age = data.age;
+    this.gender = data.gender;
     this.email = data.email;
-    this.password = data.password;
-    this.habit = data.habit;
+    this.passwordDigest = data.password;
+    this.quote = data.quote;
+    this.habits = data.habits;
   }
 
   static get all() {
