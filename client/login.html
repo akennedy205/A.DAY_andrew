@@ -15,7 +15,7 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="static/css/index.css">
-    <script defer src="static/js/login.js"></script>
+    <script defer src="static/js/auth.js"></script>
     <title>a.day</title>
 </head>
 
@@ -55,7 +55,7 @@
 
     <div class="containerF" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form id="SignUp">
                 <h1>Create Account</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -70,7 +70,7 @@
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form id="SignIn">
                 <h1>Sign in</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -79,7 +79,7 @@
                 </div>
                 <span>or use your account</span>
                 <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input type="password" value="password" placeholder="Password" />
                 <a class="social" href="#">Forgot your password?</a>
                 <button>Sign In</button>
             </form>
@@ -97,7 +97,7 @@
             </div>
         </div>
     </div>
-   
+
 </body>
 
 </html>

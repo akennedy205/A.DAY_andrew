@@ -6,6 +6,7 @@ module.exports = [
     first_name: 'Me',
     last_name: 'Too',
     email: 'fakeemail@gmail.com',
+    password: 'clifford',
     habits: [
       {
         habit1: 'Placeholder habit',
@@ -18,6 +19,7 @@ module.exports = [
     first_name: 'Me',
     last_name: 'Too',
     email: 'fakeemail@gmail.com',
+    password: 'clifford',
     habits: [
       {
         habit1: 'Placeholder habit',
@@ -29,6 +31,7 @@ module.exports = [
     user_name: 'Clifford',
     first_name: 'Me',
     last_name: 'Too',
+    password: 'clifford',
     email: 'fakeemail@gmail.com',
     habits: [
       {
