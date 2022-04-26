@@ -4,10 +4,9 @@ class User {
   constructor(data) {
     this.id = data.id;
     this.username = data.username;
-    this.first_name = data.first_name;
-    this.last_name = data.last_name;
+    this.name = data.name;
     this.email = data.email;
-    this.passwordDigest = data.password;
+    this.password = data.password;
     this.habit = data.habit;
   }
 
@@ -35,7 +34,7 @@ class User {
     return new Promise(async (res, rej) => {
       try {
         let newUser = {
-          user_name: username,
+          username: username,
           name: name,
           email: email,
           password: password,
@@ -56,7 +55,7 @@ class User {
   static findByEmail(username, email) {
     return new Promise(async (res, rej) => {
       try {
-        let findEmail = { user_name: username, email: email };
+        let findEmail = { username: username, email: email };
 
         const findUser = await db
           .collection("UserTracker")
