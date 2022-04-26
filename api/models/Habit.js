@@ -23,6 +23,38 @@ class Habit {
       }
     });
   }
+  static create({ habits }) {
+    return new Promise(async (res, rej) => {
+      try {
+        let newHabit = {
+          habits: habits,
+        };
+
+        const createHabit = await db
+          .collection('userTracker')
+          .insertMany(newHabit);
+
+        let habit = new Habit(createHabit.rows[0]);
+        res(habit);
+      } catch (err) {
+        rej(`Error creating user: ${err}`);
+      }
+    });
+  }
+  static findByHabit(habits) {
+    return new Promise(async (res, rej) => {
+      try {
+        let find_habits = { habits: habits };
+
+        const findHabit = await db.collection('userTracker').find(find_habits);
+
+        let habit = new Habit(findHabit.rows[0]);
+        res(habit);
+      } catch (err) {
+        rej(`Error retrieving user: ${err}`);
+      }
+    });
+  }
 }
 
 ////all the different functions get/create/update/delete
