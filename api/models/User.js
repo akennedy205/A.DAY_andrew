@@ -35,7 +35,7 @@ class User {
     return new Promise(async (res, rej) => {
       try {
         let newUser = {
-          username: username,
+          user_name: username,
           name: name,
           email: email,
           password: password,
@@ -56,7 +56,7 @@ class User {
   static findByEmail(username, email) {
     return new Promise(async (res, rej) => {
       try {
-        let findEmail = { username: username, email: email };
+        let findEmail = { user_name: username, email: email };
 
         const findUser = await db
           .collection("UserTracker")
