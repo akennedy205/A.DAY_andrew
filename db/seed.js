@@ -5,8 +5,7 @@ db.userTracker.drop(); //drop table if exist
 db.userTracker.insertMany([
   {
     username: 'test_user1',
-    first_name: 'Test1',
-    last_name: 'User1',
+    name: 'user1',
     email: 'test@user',
     password: 'user1',
     habit: [
@@ -34,8 +33,7 @@ db.userTracker.insertMany([
   },
   {
     username: 'test_user2',
-    first_name: 'Test2',
-    last_name: 'User2',
+    name: 'user2',
     email: 'test@user2',
     password: 'user2',
     habit: 'Swimming',
@@ -46,8 +44,7 @@ db.userTracker.insertMany([
   },
   {
     username: 'test_user3',
-    first_name: 'Test3',
-    last_name: 'User3',
+    name: 'user3',
     email: 'test@user3',
     password: 'user3',
     habit: 'Walking',
@@ -58,8 +55,7 @@ db.userTracker.insertMany([
   },
   {
     username: 'test_user4',
-    first_name: 'Test4',
-    last_name: 'User4',
+    name: 'user4',
     email: 'test@user4',
     password: 'user4',
     habit: 'Jogging',
@@ -70,8 +66,7 @@ db.userTracker.insertMany([
   },
   {
     username: 'test_user5',
-    first_name: 'Test5',
-    last_name: 'User5',
+    name: 'user5',
     email: 'test@user5',
     password: 'user5',
     habit: 'Drinking water',
@@ -82,8 +77,7 @@ db.userTracker.insertMany([
   },
   {
     username: 'test_user6',
-    first_name: 'Test6',
-    last_name: 'User6',
+    name: 'user6',
     email: 'test@user6',
     password: 'user6',
     habit: 'Eating junk food',
@@ -94,8 +88,7 @@ db.userTracker.insertMany([
   },
   {
     username: 'PrettyBoy69',
-    first_name: 'Aaftab',
-    last_name: 'TheGOAT',
+    name: 'user7',
     age: 25,
     gender: 'gigachad',
     email: 'AaftabSexyBoy@gmail.com',
