@@ -17,8 +17,8 @@ signInButton.addEventListener("click", () => {
 const signIn = document.getElementById("SignIn");
 const signUp = document.getElementById("SignUp");
 
-signIn.addEventListener("click", requestLogin);
-signUp.addEventListener("click", requestRegistration);
+signIn.addEventListener("submit", requestLogin);
+signUp.addEventListener("submit", requestRegistration);
 
 async function requestLogin(e) {
   e.preventDefault();
