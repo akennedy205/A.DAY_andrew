@@ -1,3 +1,5 @@
+// Toggle for Sign in and Sign up 
+
 const signUpButton = document.getElementById("signUp");
 const signInButton = document.getElementById("signIn");
 const container = document.getElementById("container");
@@ -9,6 +11,9 @@ signUpButton.addEventListener("click", () => {
 signInButton.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
+
+
+// 
 
 const signIn = document.getElementById("SignIn");
 const signUp = document.getElementById("SignUp");
@@ -24,8 +29,8 @@ async function requestLogin(e) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
     };
-    // need to change fetch url
-    const r = await fetch(`http://localhost:3000/auth/login`, options);
+
+    const r = await fetch(`http://localhost:3001/auth/login`, options);
     const data = await r.json();
     if (data.err) {
       throw Error(data.err);
@@ -44,8 +49,8 @@ async function requestRegistration(e) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
     };
-    // need to change fetch url
-    const r = await fetch(`http://localhost:3000/auth/register`, options);
+    
+    const r = await fetch(`http://localhost:3001/auth/register`, options);
     const data = await r.json();
     if (data.err) {
       throw Error(data.err);
