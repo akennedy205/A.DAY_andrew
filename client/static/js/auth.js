@@ -1,4 +1,4 @@
-// Toggle for Sign in and Sign up 
+// Toggle for Sign in and Sign up
 
 const signUpButton = document.getElementById("signUp");
 const signInButton = document.getElementById("signIn");
@@ -12,8 +12,7 @@ signInButton.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
 
-
-// 
+// LOGIN/REGISTER FUNCTIONS
 
 const signIn = document.getElementById("SignIn");
 const signUp = document.getElementById("SignUp");
@@ -29,15 +28,14 @@ async function requestLogin(e) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
     };
-
     const r = await fetch(`http://localhost:3001/auth/login`, options);
     const data = await r.json();
-    if (data.err) {
-      throw Error(data.err);
+    if (!data.success) {
+      throw new Error("Login not authorised");
     }
-    login(data);
+    login(data.token);
   } catch (err) {
-    console.warn(`Error: ${err}`);
+    console.warn(err);
   }
 }
 
@@ -49,7 +47,6 @@ async function requestRegistration(e) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
     };
-    
     const r = await fetch(`http://localhost:3001/auth/register`, options);
     const data = await r.json();
     if (data.err) {
@@ -59,4 +56,17 @@ async function requestRegistration(e) {
   } catch (err) {
     console.warn(err);
   }
+}
+
+function login(token) {
+  const user = jwt_decode(token);
+  localStorage.setItem("token", token);
+  localStorage.setItem("username", user.username);
+  localStorage.setItem("userEmail", user.email);
+  window.location.hash = "#feed";
+}
+
+function currentUser() {
+  const username = localStorage.getItem("username");
+  return username;
 }
