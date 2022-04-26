@@ -100,7 +100,6 @@ db.userTracker.insertMany([
     gender: 'gigachad',
     email: 'AaftabSexyBoy@gmail.com',
     password: '12345ItsCool',
-    calendar: '',
     habits: [
       {
         name: 'Coffee Intake',
@@ -113,6 +112,7 @@ db.userTracker.insertMany([
         name: 'Exersise',
         frequency: 'weekly',
         days: ['mon','thur'],
+        time: ['19:00', '20:00', '10:30', '11:00'],
         date: '27/04/2022',
         completed: 'yes'
       }
