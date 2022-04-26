@@ -31,8 +31,7 @@ db.userTracker.insertMany([
   },
   {
     username: 'PrettyBoy69',
-    first_name: 'Aaftab',
-    last_name: 'TheGOAT',
+    name: 'user7',
     age: 25,
     gender: 'gigachad',
     email: 'AaftabSexyBoy@gmail.com',

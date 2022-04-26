@@ -2,9 +2,8 @@ module.exports = [
   //Test data for users
   {
     id: 1,
-    user_name: 'Clifford',
-    first_name: 'Me',
-    last_name: 'Too',
+    username: 'Clifford',
+    name: 'Me Too',
     email: 'fakeemail@gmail.com',
     password: 'clifford',
     habits: [
@@ -15,9 +14,8 @@ module.exports = [
   },
   {
     id: 2,
-    user_name: 'Clifford',
-    first_name: 'Me',
-    last_name: 'Too',
+    username: 'Clifford',
+    name: 'Me Too',
     email: 'fakeemail@gmail.com',
     password: 'clifford',
     habits: [
@@ -28,9 +26,8 @@ module.exports = [
   },
   {
     id: 3,
-    user_name: 'Clifford',
-    first_name: 'Me',
-    last_name: 'Too',
+    username: 'Clifford',
+    name: 'Me Too',
     password: 'clifford',
     email: 'fakeemail@gmail.com',
     habits: [
