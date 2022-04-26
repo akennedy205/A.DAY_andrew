@@ -1,16 +1,18 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const habitsController = require('../controllers/habits');
+const { verifyToken } = require("../middleware/auth");
 
-router.get('/', habitsController.index);
+const habitsController = require("../controllers/habits");
 
-router.post('/', habitsController.create);
+router.get("/", verifyToken, habitsController.index);
 
-router.get('/:id', habitsController.show);
+router.post("/", verifyToken, habitsController.create);
 
-router.delete('/:id', habitsController.destroy);
+router.get("/:id", verifyToken, habitsController.show);
 
-router.put('/:id', habitsController.update);
+router.delete("/:id", verifyToken, habitsController.destroy);
+
+router.put("/:id", verifyToken, habitsController.update);
 
 module.exports = router;

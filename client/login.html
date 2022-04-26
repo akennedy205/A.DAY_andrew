@@ -55,7 +55,7 @@
 
     <div class="containerF" id="container">
         <div class="form-container sign-up-container">
-            <form>
+            <form id="SignUp">
                 <h1>Create Account</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -67,11 +67,11 @@
                 <input type="text" name="name" placeholder="Name" />
                 <input type="email" name="email" placeholder="Email" />
                 <input type="password" name="password" placeholder="Password" />
-                <button id="SignUp">Sign Up</button>
+                <input class="auth" type="submit" value="SIGN UP" />
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form>
+            <form id="SignIn">
                 <h1>Sign in</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -82,7 +82,7 @@
                 <input type="email" placeholder="Email" />
                 <input type="password" value="password" placeholder="Password" />
                 <a class="social" href="#">Forgot your password?</a>
-                <button id="SignIn">Sign In</button>
+                <input class="auth" type="submit" value="SIGN IN" />
             </form>
         </div>
         <div class="overlay-container">
@@ -98,7 +98,15 @@
             </div>
         </div>
     </div>
+    <main>
 
+    </main>
+
+    <script src='https://cdn.jsdelivr.net/npm/jwt-decode@1.5.1/build/jwt-decode.min.js'></script>
+    <script src='static/js/auth.js'></script>
+    <script src='static/js/requests.js'></script>
+    <script src='static/js/content.js'></script>
+    <script src='static/js/layout.js'></script>
 </body>
 
 </html>
