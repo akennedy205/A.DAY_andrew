@@ -1,19 +1,36 @@
 db = connect('mongodb://localhost:27017/habitsapp'); //connect do mongo at this port
 
-db.tracker.drop(); //drop table if exist
+db.userTracker.drop(); //drop table if exist
 
-db.tracker.insertMany([
+db.userTracker.insertMany([
   {
     username: 'test_user1',
     first_name: 'Test1',
     last_name: 'User1',
     email: 'test@user',
     password: 'user1',
-    habit: 'Running',
-    date: '02/10/2022',
-    day: 'Wednesday',
-    start_time: '07:30',
-    end_time: '8:48',
+    habit: [
+      {
+        habit1: 'Running',
+        tracker: [
+          {
+            date: '02/10/2022',
+            day: 'Wednesday',
+            start_time: '07:30',
+            end_time: '8:48',
+          },
+        ],
+        habit2: 'Drinking water',
+        tracker: [
+          {
+            date: '02/10/2022',
+            day: 'Wednesday',
+            start_time: '06:30',
+            end_time: '7:48',
+          },
+        ],
+      },
+    ],
   },
   {
     username: 'test_user2',
