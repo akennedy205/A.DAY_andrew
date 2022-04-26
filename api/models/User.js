@@ -52,10 +52,10 @@ class User {
     });
   }
 
-  static findByEmail(username, email) {
+  static findByEmail(email) {
     return new Promise(async (res, rej) => {
       try {
-        let findEmail = { username: username, email: email };
+        let findEmail = {email: email };
 
         const findUser = await db
           .collection("UserTracker")
