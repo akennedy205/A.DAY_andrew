@@ -8,7 +8,7 @@ class User {
     this.last_name = data.last_name;
     this.email = data.email;
     this.passwordDigest = data.password;
-    this.habit;
+    this.habit = data.habit;
   }
 
   static get all() {
