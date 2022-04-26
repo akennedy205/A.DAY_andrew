@@ -93,15 +93,29 @@ db.userTracker.insertMany([
     end_time: '10:40',
   },
   {
-    username: 'test_user7',
-    first_name: 'Test7',
-    last_name: 'User7',
-    email: 'test@user7',
-    password: 'user7',
-    habit: 'Eating junk food',
-    date: '09/10/2022',
-    day: 'Monday',
-    start_time: '09:34',
-    end_time: '10:40',
-  },
+    username: 'PrettyBoy69',
+    first_name: 'Aaftab',
+    last_name: 'TheGOAT',
+    age: 25,
+    gender: 'gigachad',
+    email: 'AaftabSexyBoy@gmail.com',
+    password: '12345ItsCool',
+    calendar: '',
+    habits: [
+      {
+        name: 'Coffee Intake',
+        frequency: 'daily',
+        count: 4,
+        date: '27/04/2022',
+        improvement: 'no'
+      },
+      {
+        name: 'Exersise',
+        frequency: 'weekly',
+        days: ['mon','thur'],
+        date: '27/04/2022',
+        completed: 'yes'
+      }
+    ]
+  }
 ]);
