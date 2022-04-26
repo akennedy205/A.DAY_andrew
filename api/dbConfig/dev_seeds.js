@@ -1,5 +1,4 @@
 module.exports = [
-
   //Test data for users
   {
     id: 1,
@@ -10,10 +9,8 @@ module.exports = [
     habits: [
       {
         habit1: 'Placeholder habit',
-
-      }
-
-    ]
+      },
+    ],
   },
   {
     id: 2,
@@ -24,9 +21,8 @@ module.exports = [
     habits: [
       {
         habit1: 'Placeholder habit',
-
-      }
-    ]
+      },
+    ],
   },
   {
     id: 3,
@@ -37,8 +33,7 @@ module.exports = [
     habits: [
       {
         habit1: 'Placeholder habit',
-
-      }
-    ]
- },
+      },
+    ],
+  },
 ];

@@ -1,14 +1,16 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
 const habitsController = require('../controllers/habits');
 
-router.route("/").get(habitsController.index).post(habitsController.create);
+router.get('/', habitsController.index);
 
-router
-  .route("/:id")
-  .get(habitsController.show)
-  .delete(habitsController.destroy)
-  .put(habitsController.update);
+router.post('/', habitsController.create);
+
+router.get('/:id', habitsController.show);
+
+router.delete('/:id', habitsController.destroy);
+
+router.put('/:id', habitsController.update);
 
 module.exports = router;

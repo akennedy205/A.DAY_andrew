@@ -1,9 +1,15 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const trackerController = require("../controllers/tracker");
+const usersController = require('../controllers/users');
 
-router.route("/").get(trackerController.index);
+router.get('/', usersController.index);
 
-router.route("/:id").get(trackerController.show);
+router.post('/', usersController.create);
+
+router.get('/:id', usersController.show);
+
+router.delete('/:id', usersController.destroy);
+
+router.put('/:id', usersController.update);
 
 module.exports = router;

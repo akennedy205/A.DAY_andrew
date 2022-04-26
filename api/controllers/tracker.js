@@ -2,8 +2,8 @@ const Tracker = require('../models/Tracker');
 
 async function index(req, res) {
   try {
-    const tracker = await Tracker.all;
-    res.status(200).json(tracker);
+    const trackers = await Tracker.all;
+    res.status(200).json(trackers);
   } catch (err) {
     res.status(500).send(err);
   }
