@@ -5,14 +5,14 @@ const User = require('./User');
 
 class Tracker {
   constructor(data) {
-    this.id = data.id;
     this.habit = data.habit;
-    this.date = data.date;
-    this.day = data.day;
-    this.startTime = data.start_time;
-    this.endTime = data.end_time;
-    this.spentTime = data.spent_time;
+    this.tracker = data.tracker;
   }
+
+  ////////////////////////////////////////////////////////////////
+  /*GET ALL PATH*/
+  ////////////////////////////////////////////////////////////////
+
   static get all() {
     return new Promise(async (resolve, reject) => {
       try {
@@ -30,6 +30,10 @@ class Tracker {
     });
   }
 }
+
+////////////////////////////////////////////////////////////////
+/*GET Eath PATH*/
+////////////////////////////////////////////////////////////////
 
 ////all the different functions get/create/update/delete
 
