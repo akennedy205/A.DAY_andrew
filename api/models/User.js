@@ -17,7 +17,7 @@ class User {
   static get all() {
     return new Promise(async (resolve, reject) => {
       try {
-        const db = init();
+        const db = await init();
         //connect to db. if we can't control how fast it returns, add an await
         const dbData = await db.collection('userTracker').find({}).toArray();
         //wait for us to find all of the dogs, not specifying anything in curly brackets. convert JSON object to a list (array).  easier to iterate thru.
