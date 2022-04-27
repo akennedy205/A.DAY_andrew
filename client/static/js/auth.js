@@ -35,6 +35,7 @@ async function requestLogin(e) {
       throw new Error('Login not authorised');
     }
     login(data.token);
+    window.location.href = 'habitTracker.html';
   } catch (err) {
     console.warn(err);
   }

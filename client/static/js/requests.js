@@ -15,3 +15,17 @@ async function getAllInfo() {
     console.warn(err);
   }
 }
+
+// fetch("http://localhost:3001/users/:id", {
+//   method: "POST",
+//   headers: {
+//     'Content-Type': 'application/json'
+//   },
+//   habits: JSON.stringify({ 
+//     name: 'pushing p'
+//   })
+// }).then(res => {
+//   return res.json()
+// })
+// .then(data => console.log(data))
+// .catch(err => console.log(err))
