@@ -1,4 +1,4 @@
-const { init } = require('../init.js');
+const { init } = require("../init");
 
 class User {
   constructor(data) {
@@ -18,13 +18,13 @@ class User {
       try {
         const db = await init();
         //connect to db. if we can't control how fast it returns, add an await
-        const dbData = await db.collection('userTracker').find({}).toArray();
+        const dbData = await db.collection("userTracker").find({}).toArray();
         //wait for us to find all of the dogs, not specifying anything in curly brackets. convert JSON object to a list (array).  easier to iterate thru.
         const users = dbData.map((d) => new User(d));
         //for each record, make a JS dog object. turn each one into a dog so you can  send it back
 
         if (!users.length) {
-          throw new Error('you coudn that you are tracking at the moment!');
+          throw new Error("you coudn that you are tracking at the moment!");
         }
         resolve(users);
       } catch (err) {
@@ -45,7 +45,7 @@ class User {
         };
 
         const createUser = await db
-          .collection('userTracker')
+          .collection("userTracker")
           .insertMany(newUser);
 
         let user = new User(createUser.rows[0]);
@@ -71,11 +71,11 @@ class User {
   static findByEmail(email) {
     return new Promise(async (res, rej) => {
       try {
-        let findEmail = { email: email };
+        let findInfo = { email: email};
 
         const findUser = await db
-          .collection('userTracker')
-          .find(findEmail)
+          .collection("userTracker")
+          .find(findInfo)
           .toArray();
 
         let user = new User(findUser.rows[0]);
@@ -89,4 +89,4 @@ class User {
 
 ////all the different functions get/create/update/delete
 
-module.exports = User;
+module.exports = {User, init};

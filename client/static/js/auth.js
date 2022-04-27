@@ -63,7 +63,6 @@ function login(token) {
   localStorage.setItem("token", token);
   localStorage.setItem("username", user.username);
   localStorage.setItem("userEmail", user.email);
-  // need to edit this for browser location purposes - linked with layout.js
   window.location.hash = "#feed";
 }
 

@@ -23,7 +23,7 @@ async function renderFeed() {
 function renderProfile() {
   const profile = document.createElement("section");
   const greeting = document.createElement("h3");
-  greeting.textContent = `Hi there, ${localStorage.getItem("username")}!`;
+  greeting.textContent = `Hi ${localStorage.getItem("username")}!`;
   profile.appendChild(greeting);
   main.appendChild(profile);
 }

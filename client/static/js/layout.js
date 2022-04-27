@@ -1,6 +1,6 @@
 const main = document.querySelector("main");
 
-const publicRoutes = ["#", "#login", "#register"];
+const publicRoutes = ["#", "#login"];
 const privateRoutes = ["#feed", "#profile"];
 
 window.addEventListener("hashchange", updateContent);
@@ -9,11 +9,10 @@ function updateMain(path) {
   main.innerHTML = "";
   if (path) {
     switch (path) {
+      case "#":
+        window.location.href = "index.html";
       case "#login":
-        renderLoginForm();
-        break;
-      case "#register":
-        renderRegisterForm();
+        window.location.href = "login.html";
         break;
       case "#feed":
         renderFeed();
@@ -26,8 +25,8 @@ function updateMain(path) {
         break;
     }
   } else {
-    // something needs to go here to tell browser where to go if cant go to those above
-    // renderHomepage();
+    // tells the browser where to go if cant go to those above
+    window.location.hash = "#";
   }
 }
 
@@ -38,7 +37,6 @@ function updateContent() {
   } else if (!privateRoutes.includes(path) && currentUser()) {
     window.location.hash = "#feed";
   } else {
-    // updateNav();
     updateMain(path);
   }
 }
