@@ -1,4 +1,5 @@
-const { init } = require("../init");
+const { init } = require('../init.js');
+const db = init();
 
 class User {
   constructor(data) {
@@ -16,15 +17,15 @@ class User {
   static get all() {
     return new Promise(async (resolve, reject) => {
       try {
-        const db = await init();
+        const db = init();
         //connect to db. if we can't control how fast it returns, add an await
-        const dbData = await db.collection("userTracker").find({}).toArray();
+        const dbData = await db.collection('userTracker').find({}).toArray();
         //wait for us to find all of the dogs, not specifying anything in curly brackets. convert JSON object to a list (array).  easier to iterate thru.
         const users = dbData.map((d) => new User(d));
         //for each record, make a JS dog object. turn each one into a dog so you can  send it back
 
         if (!users.length) {
-          throw new Error("you coudn that you are tracking at the moment!");
+          throw new Error('you coudn that you are tracking at the moment!');
         }
         resolve(users);
       } catch (err) {
@@ -43,27 +44,31 @@ class User {
           email: email,
           password: password,
         };
-
+        console.log(newUser);
         const createUser = await db
-          .collection("userTracker")
-          .insertMany(newUser);
+          .collection('userTracker')
+          .insertOne(newUser);
+        console.log(createUser);
 
-        let user = new User(createUser.rows[0]);
+        let user = new User(createUser);
         res(user);
       } catch (err) {
         rej(`Error creating user: ${err}`);
       }
     });
   }
-  static findById() {
-    return new Promise(async (resolve, reject) => {
+  static findByUsername(username) {
+    return new Promise(async (res, rej) => {
       try {
         const db = await init();
-        let userData = await (await db.collections('userTracker')).findOne();
-        let user = new User(userData.rows[0]);
-        resolve(user);
+        console.log(username);
+        const user = await db
+          .collection('userTracker')
+          .findOne({ username: username });
+        console.log(user);
+        res(user);
       } catch (err) {
-        reject('User not found');
+        rej(`Error retrieving user: ${err}`);
       }
     });
   }
@@ -71,14 +76,13 @@ class User {
   static findByEmail(email) {
     return new Promise(async (res, rej) => {
       try {
-        let findInfo = { email: email};
+        const db = await init();
+        let findEmail = { email: email };
+        console.log(findEmail);
 
-        const findUser = await db
-          .collection("userTracker")
-          .find(findInfo)
-          .toArray();
-
-        let user = new User(findUser.rows[0]);
+        const findUser = await db.collection('userTracker').findOne(findEmail);
+        console.log(findUser);
+        let user = new User(findUser);
         res(user);
       } catch (err) {
         rej(`Error retrieving user: ${err}`);
@@ -89,4 +93,4 @@ class User {
 
 ////all the different functions get/create/update/delete
 
-module.exports = {User, init};
+module.exports = User;

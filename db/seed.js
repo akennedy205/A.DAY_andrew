@@ -4,12 +4,11 @@ db.userTracker.drop(); //drop table if exist
 
 db.userTracker.insertMany([
   {
-    username: 'Harambe',
+    username: 'harambe',
     name: 'Bossman Onur',
     age: 21,
-    gender: 'gigachad',
-    email: 'OnurSexyBoy@gmail.com',
-    password: '12345ItsGOATED',
+    email: 'admin@gmail.com',
+    password: '$2a$04$8cvawn5UItCYkX4W2wf25uiELfiEeXmQ1D9oojUSxNAWvanUVieXG',
     quote: 'I will sleep when the grind stops, but the grind never dies',
     habits: [
       {
@@ -47,7 +46,7 @@ db.userTracker.insertMany([
     ],
   },
   {
-    username: 'PrettyBoy69',
+    username: 'prettyBoy69',
     name: 'user7',
     age: 25,
     gender: 'gigachad',
