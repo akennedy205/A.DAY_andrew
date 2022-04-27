@@ -17,17 +17,34 @@ db.userTracker.insertMany([
         frequency: 'daily',
         count: 24,
         date: '27/04/2022',
-        improvement: 'Undefined'
+        improvement: 'Undefined',
       },
       {
         name: 'Sigma Grind',
         frequency: 'monthly',
         days: ['mon', 'tue', 'wed', 'thur', 'fri', 'sat', 'sun', 'sig'],
-        time: ['06:00', '18:00', '06:00', '18:00', '06:00', '18:00', '06:00', '18:00', '06:00', '18:00', '06:00', '18:00', '06:00', '18:00', '06:00', '18:00',],
+        time: [
+          '06:00',
+          '18:00',
+          '06:00',
+          '18:00',
+          '06:00',
+          '18:00',
+          '06:00',
+          '18:00',
+          '06:00',
+          '18:00',
+          '06:00',
+          '18:00',
+          '06:00',
+          '18:00',
+          '06:00',
+          '18:00',
+        ],
         date: '27/04/2022',
-        completed: 'forever'
-      }
-    ]
+        completed: 'forever',
+      },
+    ],
   },
   {
     username: 'PrettyBoy69',
@@ -42,16 +59,16 @@ db.userTracker.insertMany([
         frequency: 'daily',
         count: 4,
         date: '27/04/2022',
-        improvement: 'no'
+        improvement: 'no',
       },
       {
         name: 'Exersise',
         frequency: 'weekly',
-        days: ['mon','thur'],
+        days: ['mon', 'thur'],
         time: ['19:00', '20:00', '10:30', '11:00'],
         date: '27/04/2022',
-        completed: 'yes'
-      }
-    ]
-  }
+        completed: 'yes',
+      },
+    ],
+  },
 ]);

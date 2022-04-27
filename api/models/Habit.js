@@ -2,6 +2,7 @@ const { init } = require('../init.js');
 
 class Habit {
   constructor(data) {
+    this.id = data.id;
     this.username = data.username;
     this.habits = data.habits;
   }

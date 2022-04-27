@@ -2,6 +2,7 @@ const { init } = require('../init.js');
 
 class User {
   constructor(data) {
+    this.id = data.id;
     this.username = data.username;
     this.name = data.name;
     this.age = data.age;
@@ -35,6 +36,7 @@ class User {
   static create({ username, name, email, password }) {
     return new Promise(async (res, rej) => {
       try {
+        const db = await init();
         let newUser = {
           username: username,
           name: name,
@@ -53,17 +55,15 @@ class User {
       }
     });
   }
-  static findByUsername(username) {
-    return new Promise(async (res, rej) => {
+  static findById() {
+    return new Promise(async (resolve, reject) => {
       try {
-        let findUsername = { username: username };
-
-        const findUser = await db.collection('userTracker').find(findUsername);
-
-        let user = new User(findUser.rows[0]);
-        res(user);
+        const db = await init();
+        let userData = await (await db.collections('userTracker')).findOne();
+        let user = new User(userData.rows[0]);
+        resolve(user);
       } catch (err) {
-        rej(`Error retrieving user: ${err}`);
+        reject('User not found');
       }
     });
   }
