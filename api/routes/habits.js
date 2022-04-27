@@ -5,11 +5,11 @@ const { verifyToken } = require("../middleware/auth");
 
 const habitsController = require("../controllers/habits");
 
-router.get("/", verifyToken, habitsController.index);
+router.get("/",habitsController.index);
 
 router.post("/", verifyToken, habitsController.create);
 
-router.get("/:id", verifyToken, habitsController.show);
+router.get("/:id", habitsController.show);
 
 router.delete("/:id", verifyToken, habitsController.destroy);
 
