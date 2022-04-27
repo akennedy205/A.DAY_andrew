@@ -4,39 +4,103 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Habit Tracker</title>
+    <script
+      src="https://kit.fontawesome.com/592efcffa0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="static/css/index.css" />
+    <title>a.day</title>
   </head>
-  <body>
-    <form>
-      <ul>
-        <legend><li>habits_name</li></legend>
-        <textarea id="w3review" name="w3review" rows="4" cols="50">
-             At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
-            </textarea
-        >
-        <legend><li>habits_name</li></legend>
-        <p>Frequency</p>
-        <select id="frequencyDropdown">
-          <option disabled selected>Select option</option>
-          <option value="daily">daily</option>
-          <option value="weekly">weekly</option>
-          <option value="monthly">monthly</option>
-        </select>
-        <select id="weeklyfrequencyDropdown">
-            <option disabled selected>Select option</option>
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thurday">Thurday</option>
-            <option value="Friday">Friday</option>
-          </select>
-        <br></br>
-        <legend><li>habits_name</li></legend>
-        <textarea id="w3review" name="w3review" rows="4" cols="50">
-            At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
-    </textarea
-        >
-      </ul>
+
+  <!-- NAVBAR  -->
+
+  <body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html"> A.DAY </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">
+              INTRODUCTION <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FEATURES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> COMPLETED TASKS </a>
+          </li>
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul id="login" class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">
+              <img src="static/css/login.png" alt="login icon"
+            /></a>
+          </li>
+          <li id="basket" class="nav-item">
+            <a class="nav-link" href="#"
+              ><img src="static/css/basket.png" alt="basket icon" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <form id="createHabit" method="POST">
+      <h3>Select your habit and make the change you need today!</h3>
+
+      <input
+        style="width: fit-content"
+        type="text"
+        name="name"
+        placeholder="CREATE HABIT"
+      />
+      <input type="checkbox" id="daily" name="frequency" value="DAILY" />
+      <label for="frequency"> DAILY </label>
+      <input type="checkbox" id="weekly" name="frequency" value="WEEKLY" />
+      <label for="frequeny"> WEEKLY </label>
+      <input
+        id="habitBtn"
+        style="width: fit-content"
+        type="submit"
+        value="ADD"
+      />
     </form>
+
+    <div id="habitContent" class="container" style="display: none">
+      <h2>CURRENT HABITS</h2>
+      <div class="card">
+        <div class="card-body">Basic card</div>
+      </div>
+    </div>
   </body>
 </html>

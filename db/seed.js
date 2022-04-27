@@ -1,6 +1,7 @@
 db = connect('mongodb://localhost:27017/habitsapp'); //connect do mongo at this port
 
 db.userTracker.drop(); //drop table if exist
+db.habitTracker.drop(); //drop table if exist
 
 db.userTracker.insertMany([
   {
@@ -8,27 +9,27 @@ db.userTracker.insertMany([
     name: 'admin',
     email: 'admin@gmail.com',
     password: '$2a$04$8cvawn5UItCYkX4W2wf25uiELfiEeXmQ1D9oojUSxNAWvanUVieXG',
-    habits: [
-      {
-        name: 'Smoking my plant',
-        frequency: 'daily',
-      },
-    ],
   },
   {
     username: 'admin2',
     name: 'admin2',
     email: 'admin2@gmail.com',
     password: '$2a$04$8cvawn5UItCYkX4W2wf25uiELfiEeXmQ1D9oojUSxNAWvanUVieXG',
-    habits: [
-      {
-        name: 'Coffee Intake',
-        frequency: 'weekly',
-      },
-    ],
   },
 ]);
 
+db.habitsTracker.insertMany([
+  {
+    username: 'admin',
+    habit_1: 'Smoking my plant',
+    frequency: 'daily',
+  },
+  {
+    username: 'admin2',
+    name: 'Coffee Intake',
+    frequency: 'weekly',
+  },
+]);
 
 // db.userTracker.insertMany([
 //   {

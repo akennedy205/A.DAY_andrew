@@ -1,10 +1,10 @@
 async function getAllInfo() {
   try {
     const options = {
-      headers: new Headers({ Authorization: localStorage.getItem("token") }),
+      headers: new Headers({ Authorization: localStorage.getItem('token') }),
     };
     // NEED TO FETCH THE INFORMATION NEEDED FOR THE HABITS ADD AND TRACKING INFO //
-    const response = await fetch("http://localhost:3001/habits", options);
+    const response = await fetch('http://localhost:3001/habits', options);
     const data = await response.json();
     if (data.err) {
       console.warn(data.err);
@@ -16,12 +16,65 @@ async function getAllInfo() {
   }
 }
 
+const form = document.querySelector('form');
+form.addEventListener('submit', postHabit);
+
+async function postHabit(e) {
+  e.preventDefault();
+  try {
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
+    };
+    const r = await fetch(`http://localhost:3001/${usrname}`, options);
+    const data = await r.json();
+    console.log(data);
+    if (data.err) {
+      throw Error(data.err);
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+}
+
+async function getHabit(username) {
+  try {
+    const response = await fetch(`http://localhost:3001/${username}`);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.warn(err);
+  }
+}
+
+const r = await fetch(`http://localhost:3001/${username}`, options);
+
+async function postHabit(e) {
+  e.preventDefault();
+  try {
+    const options = {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.parse(Object.fromEntries(new FormData(e.target))),
+    };
+    const r = await fetch(`http://localhost:3001/habits`, options);
+    const data = await r.json();
+    console.log(data);
+    if (data.err) {
+      throw Error(data.err);
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+}
+
 // fetch("http://localhost:3001/users/:id", {
 //   method: "POST",
 //   headers: {
 //     'Content-Type': 'application/json'
 //   },
-//   habits: JSON.stringify({ 
+//   habits: JSON.stringify({
 //     name: 'pushing p'
 //   })
 // }).then(res => {
