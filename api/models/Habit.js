@@ -3,7 +3,7 @@ const { init } = require('../init.js');
 class Habit {
   constructor(data) {
     this.username = data.username;
-    this.habits = data.habits;
+    this.habit = data.habit;
     this.frequency = data.frequency;
   }
   static get all() {
