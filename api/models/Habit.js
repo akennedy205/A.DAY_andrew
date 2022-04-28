@@ -24,23 +24,18 @@ class Habit {
       }
     });
   }
-  static create({ username, habit, frequency, status }) {
+  static create({ habit }) {
     return new Promise(async (res, rej) => {
       try {
         const db = await init();
         let newHabit = {
-          username: username,
           habit: habit,
-          frequency: frequency,
-          status: status,
         };
 
         const createHabit = await db
           .collection('habitsTracker')
           .insertMany(newHabit);
-
-        let user = new Habit(createHabit.rows[0]);
-        res(user);
+        res(createHabit);
       } catch (err) {
         rej(`Error creating habits: ${err}`);
       }
@@ -53,6 +48,25 @@ class Habit {
         const user = await db
           .collection('habitsTracker')
           .findOne({ username: username });
+        console.log(user);
+        res(user);
+      } catch (err) {
+        rej(`Error retrieving habits: ${err}`);
+      }
+    });
+  }
+  static findHabitByUsername(username) {
+    return new Promise(async (res, rej) => {
+      try {
+        const db = await init();
+        const user = await db.collection('habitsTracker').findOneAndUpdate(
+          { username: username },
+          {
+            $push: {
+              habit: newHabit,
+            },
+          }
+        );
         console.log(user);
         res(user);
       } catch (err) {

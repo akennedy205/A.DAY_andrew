@@ -1,24 +1,21 @@
-// async function renderFeed() {
-//   const feed = document.createElement("section");
-//   feed.id = "feed";
-//   const posts = await getAllInfo();
-//   if (posts.err) {
-//     return;
-//   }
-//   const renderPost = (postData) => {
-//     const post = document.createElement("div");
-//     post.className = "post";
-//     const user = document.createElement("h3");
-//     const body = document.createElement("p");
-//     user.textContent = postData.username;
-//     body.textContent = postData.body;
-//     post.appendChild(user);
-//     post.appendChild(body);
-//     feed.appendChild(post);
-//   };
-//   posts.forEach(renderPost);
-//   main.appendChild(feed);
-// }
+async function renderFeed() {
+  const feed = document.createElement('section');
+  feed.id = 'feed';
+  const posts = await requestHabit();
+  if (posts.err) {
+    return;
+  }
+  const renderPost = (postData) => {
+    const post = document.createElement('div');
+    post.className = 'post';
+    const user = document.createElement('h3');
+    user.textContent = postData.habit;
+    post.appendChild(user);
+    feed.appendChild(post);
+  };
+  posts.forEach(renderPost);
+  main.appendChild(feed);
+}
 
 // function renderProfile() {
 //   const profile = document.createElement('section');
