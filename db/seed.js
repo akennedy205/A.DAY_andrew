@@ -16,20 +16,32 @@ db.userTracker.insertMany([
     email: 'admin2@gmail.com',
     password: '$2a$04$8cvawn5UItCYkX4W2wf25uiELfiEeXmQ1D9oojUSxNAWvanUVieXG',
   },
+  {
+    username: 'admin3',
+    name: 'admin3',
+    email: 'admin3@gmail.com',
+    password: '$2a$04$8cvawn5UItCYkX4W2wf25uiELfiEeXmQ1D9oojUSxNAWvanUVieXG',
+  },
 ]);
 
 db.habitsTracker.insertMany([
   {
     username: 'admin',
-    habit: 'Drinking Energy drinks',
-    frequency: 'daily',
-    status: 'completed',
+    habit: ['Drinking Energy drinks'],
+    frequency: ['daily'],
+    count: [1],
   },
   {
     username: 'admin2',
-    habit: 'Going to restaurants',
-    frequency: 'weekly',
-    status: 'incompleted',
+    habit: ['Going to restaurants'],
+    frequency: ['weekly'],
+    count: [1],
+  },
+  {
+    username: 'admin3',
+    habit: ['Running', 'eating junk food'],
+    frequency: ['daily'],
+    count: [0],
   },
 ]);
 

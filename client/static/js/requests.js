@@ -36,8 +36,8 @@ async function requestHabit(e) {
     if (!data.success) {
       throw new Error('Habit is not valid');
     }
-    login(data.token);
     window.location.href = 'habitTracker.html';
+    renderFeed();
   } catch (err) {
     console.warn(err);
   }
