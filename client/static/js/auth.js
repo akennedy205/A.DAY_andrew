@@ -28,7 +28,7 @@ async function requestLogin(e) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
     };
-    console.log(Object.fromEntries(new FormData(e.target)));
+    // console.log(Object.fromEntries(new FormData(e.target)));
     const r = await fetch(`http://localhost:3001/auth/login`, options);
     const data = await r.json();
     if (!data.success) {
@@ -51,7 +51,7 @@ async function requestRegistration(e) {
     };
     const r = await fetch(`http://localhost:3001/auth/register`, options);
     const data = await r.json();
-    console.log(data);
+    // console.log(data);
     if (data.err) {
       throw Error(data.err);
     }

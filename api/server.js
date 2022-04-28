@@ -1,11 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const cookieParser = require('cookie-parser');
 const server = express();
 
 server.use(cors());
 server.use(express.json());
-server.use(cookieParser());
 
 const usersRoutes = require('./routes/users');
 const habitsRoutes = require('./routes/habits');

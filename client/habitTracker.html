@@ -25,6 +25,8 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="static/css/index.css" />
+    <script src="static/js/requests.js" defer></script>
+    <script src="static/js/content.js" defer></script>
     <title>a.day</title>
   </head>
 
@@ -79,15 +81,16 @@
       <h3>Select your habit and make the change you need today!</h3>
 
       <input
+      id="habitContent"
         style="width: fit-content"
         type="text"
         name="name"
         placeholder="CREATE HABIT"
       />
-      <input type="checkbox" id="daily" name="frequency" value="DAILY" />
+      <!-- <input type="checkbox" id="daily" name="frequency" value="DAILY" />
       <label for="frequency"> DAILY </label>
       <input type="checkbox" id="weekly" name="frequency" value="WEEKLY" />
-      <label for="frequeny"> WEEKLY </label>
+      <label for="frequeny"> WEEKLY </label> -->
       <input
         id="habitBtn"
         style="width: fit-content"
@@ -99,7 +102,7 @@
     <div id="habitContent" class="container" style="display: none">
       <h2>CURRENT HABITS</h2>
       <div class="card">
-        <div class="card-body">Basic card</div>
+        <div class="card-body"></div>
       </div>
     </div>
   </body>

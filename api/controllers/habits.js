@@ -23,17 +23,9 @@ async function create(req, res) {
     const habit = await Habit.create(req.body);
     res.status(201).json(habit);
   } catch (err) {
-    res.status(422).json({ err });
+    console.log(err);
+    res.status(422).json({ message: err });
   }
 }
 
-async function update(req, res) {
-  try {
-    const habit = await Habit.findHabitByUsername(req.params.id);
-    res.status(201).json(habit);
-  } catch (err) {
-    res.status(422).json({ err });
-  }
-}
-
-module.exports = { index, show, create, update };
+module.exports = { index, show, create};

@@ -1,10 +1,10 @@
 async function getAllInfo() {
   try {
     const options = {
-      headers: new Headers({ Authorization: localStorage.getItem('token') }),
+      headers: new Headers({ Authorization: localStorage.getItem("token") }),
     };
     // NEED TO FETCH THE INFORMATION NEEDED FOR THE HABITS ADD AND TRACKING INFO //
-    const response = await fetch('http://localhost:3001/habits', options);
+    const response = await fetch("http://localhost:3001/habits", options);
     const data = await response.json();
     if (data.err) {
       console.warn(data.err);
@@ -16,32 +16,48 @@ async function getAllInfo() {
   }
 }
 
-//  Add Habit function
-
-const createHabit = document.getElementById('createHabit');
-
-createHabit.addEventListener('submit', requestHabit);
-
 async function requestHabit(e) {
   e.preventDefault();
   try {
-    const options = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
+    const content = document.getElementById("habitContent").value;
+    const payload = {
+      username: localStorage.getItem("username"),
+      habit: content,
     };
-    console.log(Object.fromEntries(new FormData(e.target)));
-    const r = await fetch(`http://localhost:3001/habits/${username}`, options);
+    const options = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"),
+      },
+      body: JSON.stringify(payload),
+    };
+
+    const response = await fetch("http://localhost:3001/habits", options);
+
+    const r = await fetch(
+      `http://localhost:3001/habits/${localStorage.getItem("username")}`
+    );
     const data = await r.json();
-    if (!data.success) {
-      throw new Error('Habit is not valid');
-    }
-    window.location.href = 'habitTracker.html';
+    console.log(data);
+    // if (data.status === ) {
+    //   throw new Error("Habit is not valid");
+    // }
+    // window.location.href = 'habitTracker.html';
     renderFeed();
   } catch (err) {
     console.warn(err);
   }
 }
+
+const habitBtn = document.getElementById("habitBtn");
+habitBtn.addEventListener("click", (e) => {
+  console.log(e);
+  requestHabit(e);
+});
+
+//  Add Habit function
 
 // const form = document.querySelector('form');
 // form.addEventListener('submit', postHabit);

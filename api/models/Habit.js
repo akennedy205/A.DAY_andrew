@@ -1,4 +1,4 @@
-const { init } = require('../init.js');
+const { init } = require("../init.js");
 
 class Habit {
   constructor(data) {
@@ -11,11 +11,11 @@ class Habit {
     return new Promise(async (resolve, reject) => {
       try {
         const db = await init();
-        const dbData = await db.collection('habitsTracker').find({}).toArray();
+        const dbData = await db.collection("habitsTracker").find({}).toArray();
         const allHabits = dbData.map((d) => new Habit(d));
         if (!allHabits.length) {
           throw new Error(
-            'you dont have any habit that you are tracking at the moment!'
+            "you dont have any habit that you are tracking at the moment!"
           );
         }
         resolve(allHabits);
@@ -24,53 +24,51 @@ class Habit {
       }
     });
   }
-  static create({ habit }) {
+  static create(habit) {
     return new Promise(async (res, rej) => {
       try {
         const db = await init();
-        let newHabit = {
-          habit: habit,
-        };
-
         const createHabit = await db
-          .collection('habitsTracker')
-          .insertMany(newHabit);
+          .collection("habitsTracker")
+          .findOneAndUpdate(
+            { username: habit.username },
+            { $push: { habit: habit.habit }}, 
+          );
         res(createHabit);
       } catch (err) {
         rej(`Error creating habits: ${err}`);
       }
     });
   }
+
   static findByUsername(username) {
     return new Promise(async (res, rej) => {
       try {
         const db = await init();
         const user = await db
-          .collection('habitsTracker')
+          .collection("habitsTracker")
           .findOne({ username: username });
-        console.log(user);
+        // console.log(user);
         res(user);
       } catch (err) {
         rej(`Error retrieving habits: ${err}`);
       }
     });
   }
-  static findHabitByUsername(username) {
-    return new Promise(async (res, rej) => {
+  static get findHabitByUsername() {
+    return new Promise(async (resolve, reject) => {
       try {
         const db = await init();
-        const user = await db.collection('habitsTracker').findOneAndUpdate(
-          { username: username },
-          {
-            $push: {
-              habit: newHabit,
-            },
-          }
-        );
-        console.log(user);
-        res(user);
+        const dbData = await db.collection("habitsTracker").find({ username: habit.username })
+        const findUserHabits = dbData.map((d) => new Habit(d));
+        if (!findUserHabits.length) {
+          throw new Error(
+            "you dont have any habit that you are tracking at the moment!"
+          );
+        }
+        resolve(findUserHabits);
       } catch (err) {
-        rej(`Error retrieving habits: ${err}`);
+        reject(`Error retrieving habits: ${err.message}`);
       }
     });
   }

@@ -1,20 +1,37 @@
 async function renderFeed() {
-  const feed = document.createElement('section');
-  feed.id = 'feed';
-  const posts = await requestHabit();
-  if (posts.err) {
-    return;
-  }
-  const renderPost = (postData) => {
-    const post = document.createElement('div');
-    post.className = 'post';
-    const user = document.createElement('h3');
-    user.textContent = postData.habit;
-    post.appendChild(user);
+  const feed = document.getElementById("habitContent");
+    feed.style.display = "block";
+    const post = document.createElement("div");
+    post.className = "card";
+    const card = document.createElement("div");
+    card.className = "card-body";
+  async function renderPost() {
+    card.textContent = await requestHabit;
+    post.appendChild(card);
     feed.appendChild(post);
-  };
-  posts.forEach(renderPost);
-  main.appendChild(feed);
+  }
+
+  post.forEach(renderPost());
+  body.appendChild(feed);
+
+  // feed.id = "feed";
+  // const posts = await requestHabit();
+  // if (posts.err) {
+  //   console.log(posts.err)
+  //   return;
+  // }
+  // const renderPost = (requestHabit) => {
+  //   const post = document.createElement("div");
+  //   post.className = "card";
+  //   const card = document.createElement("div");
+  //   card.className = "card-body";
+  //   const user = document.createElement('h3');
+  //   card.textContent = requestHabit.habit;
+  //   post.appendChild(card);
+  //   feed.appendChild(post);
+  // };
+  // posts.forEach(renderPost);
+  // body.appendChild(feed);
 }
 
 // function renderProfile() {
