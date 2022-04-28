@@ -56,15 +56,16 @@ class User {
       }
     });
   }
+  
   static findByUsername(username) {
     return new Promise(async (res, rej) => {
       try {
         const db = await init();
-        console.log(username);
+        // console.log(username);
         const user = await db
           .collection('userTracker')
           .findOne({ username: username });
-        console.log(user);
+        // console.log(user);
         res(user);
       } catch (err) {
         rej(`Error retrieving user: ${err}`);
@@ -77,10 +78,10 @@ class User {
       try {
         const db = await init();
         let findEmail = { email: email };
-        console.log(findEmail);
+        // console.log(findEmail);
 
         const findUser = await db.collection('userTracker').findOne(findEmail);
-        console.log(findUser);
+        // console.log(findUser);
         let user = new User(findUser);
         res(user);
       } catch (err) {
