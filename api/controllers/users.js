@@ -26,25 +26,4 @@ async function create(req, res) {
     res.status(422).json({ err });
   }
 }
-
-async function destroy(req, res) {
-  try {
-    const user = await User.findById(req.params.id);
-    const resp = await User.destroy();
-    res.status(204).end();
-  } catch (err) {
-    res.status(404).json({ err });
-  }
-}
-
-async function update(req, res) {
-  try {
-    const user = await User.findById(req.params.id);
-    const resp = await User.update();
-    res.status(204).end();
-  } catch (err) {
-    res.status(404).json({ err });
-  }
-}
-
-module.exports = { index, show, create, destroy, update };
+module.exports = { index, show, create };

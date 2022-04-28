@@ -11,7 +11,7 @@ async function index(req, res) {
 
 async function show(req, res) {
   try {
-    const author = await Habit.findById(req.params.id);
+    const author = await Habit.findByUsername(req.params.id);
     const books = await author.books;
     res.status(200).json({ ...author, books });
   } catch (err) {
@@ -28,24 +28,4 @@ async function create(req, res) {
   }
 }
 
-async function destroy(req, res) {
-  try {
-    const user = await Habit.findById(req.params.id);
-    const resp = await Habit.destroy();
-    res.status(204).end();
-  } catch (err) {
-    res.status(404).json({ err });
-  }
-}
-
-async function update(req, res) {
-  try {
-    const user = await Habit.findById(req.params.id);
-    const resp = await Habit.update();
-    res.status(204).end();
-  } catch (err) {
-    res.status(404).json({ err });
-  }
-}
-
-module.exports = { index, show, create, destroy, update };
+module.exports = { index, show, create };
