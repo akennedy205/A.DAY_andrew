@@ -16,9 +16,9 @@ A habit-tracking application that allows users to securely register, login and t
 - Express
 - Node.js
 - Javascript
-- (Bootstrap ??)
+- Bootstrap
 - HTML/CSS
-- PostgreSQL
+- MongoDB
 - Docker
 
 ## Usage
