@@ -5,14 +5,14 @@ class Habit {
     this.username = data.username;
     this.habit = data.habit;
     this.frequency = data.frequency;
+    this.status = data.status;
   }
   static get all() {
     return new Promise(async (resolve, reject) => {
       try {
-        const db = await init(); //connect to db. if we can't control how fast it returns, add an await
-        const dbData = await db.collection('habitsTracker').find({}).toArray(); //wait for us to find all of the dogs, not specifying anything in curly brackets. convert JSON object to a list (array).  easier to iterate thru.
-        const allHabits = dbData.map((d) => new Habit(d)); //for each record, make a JS dog object. turn each one into a dog so you can  send it back
-
+        const db = await init();
+        const dbData = await db.collection('habitsTracker').find({}).toArray();
+        const allHabits = dbData.map((d) => new Habit(d));
         if (!allHabits.length) {
           throw new Error(
             'you dont have any habit that you are tracking at the moment!'
@@ -24,36 +24,37 @@ class Habit {
       }
     });
   }
-  static create({ habit, frequency }) {
+  static create({ username, habit, frequency, status }) {
     return new Promise(async (res, rej) => {
       try {
+        const db = await init();
         let newHabit = {
+          username: username,
           habit: habit,
           frequency: frequency,
+          status: status,
         };
 
         const createHabit = await db
           .collection('habitsTracker')
           .insertMany(newHabit);
 
-        let userHabit = new Habit(createHabit.rows[0]);
-        res(userHabit);
+        let user = new Habit(createHabit.rows[0]);
+        res(user);
       } catch (err) {
-        rej(`Error creating user: ${err}`);
+        rej(`Error creating habits: ${err}`);
       }
     });
   }
-  static findByHabit(habit) {
+  static findByUsername(username) {
     return new Promise(async (res, rej) => {
       try {
-        let find_habits = { habit: habit };
-
-        const findHabit = await db
+        const db = await init();
+        const user = await db
           .collection('habitsTracker')
-          .find(find_habits);
-
-        let userHabit = new Habit(findHabit.rows[0]);
-        res(userHabit);
+          .findOne({ username: username });
+        console.log(user);
+        res(user);
       } catch (err) {
         rej(`Error retrieving habits: ${err}`);
       }

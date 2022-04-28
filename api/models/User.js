@@ -48,7 +48,6 @@ class User {
         const createUser = await db
           .collection('userTracker')
           .insertOne(newUser);
-        console.log(createUser);
 
         let user = new User(createUser);
         res(user);

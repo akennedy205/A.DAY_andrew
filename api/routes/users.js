@@ -10,8 +10,4 @@ router.post('/', verifyToken, usersController.create);
 
 router.get('/:id', usersController.show);
 
-router.delete('/:id', verifyToken, usersController.destroy);
-
-router.put('/:id', verifyToken, usersController.update);
-
 module.exports = router;

@@ -23,11 +23,13 @@ db.habitsTracker.insertMany([
     username: 'admin',
     habit: 'Drinking Energy drinks',
     frequency: 'daily',
+    status: 'completed',
   },
   {
     username: 'admin2',
     habit: 'Going to restaurants',
     frequency: 'weekly',
+    status: 'incompleted',
   },
 ]);
 
